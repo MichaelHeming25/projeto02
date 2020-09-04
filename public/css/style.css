@@ -317,6 +317,11 @@ nav {
     background: white;
     width: 38rem;
     margin: 1rem 0;
+    transition: 0.2s linear;
+}
+.grid-evento:hover {
+    transform: translateY(-20px);
+    transition: 0.2s linear;
 }
 .gride {
     display: flex;
