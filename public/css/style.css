@@ -288,7 +288,7 @@ nav {
 .pulsar {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
 }
 /* .heart-animate i {
@@ -315,8 +315,8 @@ nav {
 /* GRID-EVENTO */
 .grid-evento {
     background: white;
-    width: 38rem;
-    margin: 1rem 0;
+    width: 28rem;
+    margin: 0.5rem;
     transition: 0.2s linear;
 }
 .grid-evento:hover {
@@ -331,7 +331,6 @@ nav {
 .gride-conteudo {
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
     display: flex;
 }
 /* FOOTER */
@@ -353,6 +352,27 @@ footer span {
     color: white;
     font-family: "montserrat";
     font-size: 1.3rem;
+}
+.linhas{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    margin: 0.5rem 0;
+}
+.linhas span:nth-child(1){
+    width: 90%;
+    height: 1px;
+    background: rgb(154, 154, 154);
+    margin: 0.2rem 0;
+}
+.linhas span:nth-child(2){
+    width: 70%;
+    margin: 0.2rem 0;
+    height: 1px;
+    background:rgb(154, 154, 154);
 }
 @media (max-width: 1280px) {
     .submit-line {

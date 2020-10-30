@@ -66,10 +66,10 @@
                         <span>Seja Bem-vindo, {{ Auth::user()->name }}!</span>
                     </div>
                 @else
-                    <div class="register">
+                    {{-- <div class="register">
                         <a href="{{ route('register') }}"><span>Sign Up</span></a>
                         <a href="{{ route('login') }}"><span>Log In</span></a>
-                    </div>
+                    </div> --}}
                 @endif
 
                 <div class="btn-responsive">
@@ -91,10 +91,10 @@
                                 <span>Seja Bem-vindo, {{ Auth::user()->name }}!</span>
                             </div>
                         @else
-                            <div class="register-mobile">
+                            {{-- <div class="register-mobile">
                                 <a href="{{ route('register') }}"><span>Sign Up</span></a>
                                 <a href="{{ route('login') }}"><span>Log In</span></a>
-                            </div>
+                            </div> --}}
                         @endif
 
                         <div class="mobile-drop">
@@ -148,7 +148,7 @@
         </div>
     </nav>
 
-    <div class="images glide"  data-anijs="if: scroll, on: window, do: fadeInRight animated, before: scrollReveal, after: holdAnimClass">
+    <div class="images glide"  data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal, after: holdAnimClass">
 
     <div class="titulo-destaques">Destaques da semana</div>
 
@@ -285,7 +285,7 @@
       
     </div>
 
-    <div class="gride" data-anijs="if: scroll, on: window, do: fadeInLeft animated, before: scrollReveal, after: holdAnimClass">
+    <div class="gride" data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal, after: holdAnimClass">
         
         <div class="gride-titulo">
             <div class="titulo-eventos">Eventos da semana</div>
@@ -297,8 +297,12 @@
                 <div class="img" style="background-image: url({{ asset('carousel/images/1.png') }});"></div>
                 <div class="text-img">
                     <div class="data-geral">
-                    <div class="mes">Setembro</div>
-                    <div class="data">01</div>
+                        <div class="mes">Setembro</div>
+                        <div class="data">01</div>
+                    </div>
+                    <div class="linhas">
+                        <span></span>
+                        <span></span>
                     </div>
                     <div class="titulo-evento">Festival de musica eletronica
                         <div class="pulsar">
