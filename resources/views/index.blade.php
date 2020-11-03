@@ -91,10 +91,10 @@
                                 <span>Seja Bem-vindo, {{ Auth::user()->name }}!</span>
                             </div>
                         @else
-                            {{-- <div class="register-mobile">
+                            <div class="register-mobile">
                                 <a href="{{ route('register') }}"><span>Sign Up</span></a>
                                 <a href="{{ route('login') }}"><span>Log In</span></a>
-                            </div> --}}
+                            </div>
                         @endif
 
                         <div class="mobile-drop">
@@ -148,7 +148,7 @@
         </div>
     </nav>
 
-    <div class="images glide"  data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal, after: holdAnimClass">
+    {{-- <div class="images glide"  data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal, after: holdAnimClass">
 
     <div class="titulo-destaques">Destaques da semana</div>
 
@@ -283,7 +283,7 @@
         <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
       </div>
       
-    </div>
+    </div> --}}
 
     <div class="gride" data-anijs="if: scroll, on: window, do: zoomIn animated, before: scrollReveal, after: holdAnimClass">
         
@@ -293,134 +293,38 @@
 
         <div class="gride-conteudo">
 
-            <div class="grid-evento">
-                <div class="img" style="background-image: url({{ asset('carousel/images/1.png') }});"></div>
-                <div class="text-img">
-                    <div class="data-geral">
-                        <div class="mes">Setembro</div>
-                        <div class="data">01</div>
-                    </div>
-                    <div class="linhas">
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="titulo-evento">Festival de musica eletronica
-                        <div class="pulsar">
-                            <div class="heart-vazio">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="heart-animate">
-                                <i class="fas fa-heart"></i>
+            @foreach ($eventos as $evento)
+            
+                <div class="grid-evento">
+                    <img src="data:image/{{$evento['ext']}};base64,{{$evento['imagem_evento']}}" class="img">
+                    <div class="text-img">
+                        <div class="data-geral">
+                            <div class="mes">{{$evento['mes']}}</div>
+                            <div class="data">{{$evento['dia']}}</div>
+                        </div>
+                        <div class="linhas">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="titulo-evento">{{$evento['evento']}}
+                            <div class="pulsar">
+                                <div class="heart-vazio">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                                <div class="heart-animate">
+                                    <i class="fas fa-heart"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="grid-evento">
-                <div class="img" style="background-image: url({{ asset('carousel/images/4.png') }});"></div>
-                <div class="text-img">
-                    <div class="data-geral">
-                    <div class="mes">Setembro</div>
-                    <div class="data">01</div>
-                    </div>
-                    <div class="titulo-evento">Festival de musica eletronica
-                        <div class="pulsar">
-                            <div class="heart-vazio">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="heart-animate">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-evento">
-                <div class="img" style="background-image: url({{ asset('carousel/images/2.png') }});"></div>
-                <div class="text-img">
-                    <div class="data-geral">
-                    <div class="mes">Setembro</div>
-                    <div class="data">01</div>
-                    </div>
-                    <div class="titulo-evento">Festival de musica eletronica
-                        <div class="pulsar">
-                            <div class="heart-vazio">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="heart-animate">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-evento">
-                <div class="img" style="background-image: url({{ asset('carousel/images/3.png') }});"></div>
-                <div class="text-img">
-                    <div class="data-geral">
-                    <div class="mes">Setembro</div>
-                    <div class="data">01</div>
-                    </div>
-                    <div class="titulo-evento">Festival de musica eletronica
-                        <div class="pulsar">
-                            <div class="heart-vazio">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="heart-animate">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-evento">
-                <div class="img" style="background-image: url({{ asset('carousel/images/6.png') }});"></div>
-                <div class="text-img">
-                    <div class="data-geral">
-                    <div class="mes">Setembro</div>
-                    <div class="data">01</div>
-                    </div>
-                    <div class="titulo-evento">Festival de musica eletronica
-                        <div class="pulsar">
-                            <div class="heart-vazio">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="heart-animate">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-evento">
-                <div class="img" style="background-image: url({{ asset('carousel/images/1.png') }});"></div>
-                <div class="text-img">
-                    <div class="data-geral">
-                    <div class="mes">Setembro</div>
-                    <div class="data">01</div>
-                    </div>
-                    <div class="titulo-evento">Festival de musica eletronica
-                        <div class="pulsar">
-                            <div class="heart-vazio">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="heart-animate">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
         </div>
         
     </div>
-
+{{-- 
     <nav aria-label="Page navigation example">
         <ul class="pagination">
             <li class="page-item">
@@ -437,7 +341,7 @@
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav> --}}
 
     <footer>
         <div class="footer-interno">

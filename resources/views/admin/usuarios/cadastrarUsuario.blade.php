@@ -40,7 +40,7 @@
 
 	</div>
 	
-	<img name="avatar" style="border-radius:100%;margin: 0.5rem 0 1rem 0;width:64px;height:64px;"><br>
+	<img name="avatar" style="border-radius:100%;margin: 0 0 1rem 0;width:64px;height:64px;"><br>
 	
 	<button type="submit" class="btn btn-cadastro"><i class="icon ion-checkmark-circled"></i>Cadastrar usuário</button>
 </form>

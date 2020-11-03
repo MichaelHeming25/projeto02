@@ -97,7 +97,7 @@ class usuariosController extends Controller
 
         $dados = $request->all();
 
-         $teste2 = $request->file('avatar');
+        $teste2 = $request->file('avatar');
 
         if( isset($teste2)){
 

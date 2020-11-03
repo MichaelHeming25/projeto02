@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>DASHBOARD - EVENTOS</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
@@ -21,7 +21,7 @@
 
     <div class="conteudo">
         <header>
-            <span><i class="fas fa-user-cog"></i> ADMINISTRADORES</span>
+            <span><i class="far fa-calendar-alt"></i> EVENTOS</span>
             <div class="cadastrar">
                 <button type="button" class="btn-brand btn-elevate btn-icon-sm btn-cadastrar" data-idc="{{ url('/eventos/viewCadastrar') }}">
                     <i class="fa fa-plus"></i> Novo evento

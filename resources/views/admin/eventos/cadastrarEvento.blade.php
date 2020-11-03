@@ -41,6 +41,9 @@
 			data: {
 				required: true
 			},
+			img: {
+				required: true
+			},
 		}
 	})
 

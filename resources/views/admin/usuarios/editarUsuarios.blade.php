@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	
-	<img src="data:image/{{$ext}};base64,{{$avatar}}" name="avatar" style="border-radius:100%;margin: 0.5rem 0 1rem 0;width:64px;height:64px;"><br>
+	<img src="data:image/{{$ext}};base64,{{$avatar}}" name="avatar" style="border-radius:100%;margin: 0 0 1rem 0;width:64px;height:64px;"><br>
 
 	<button type="submit" class="btn btn-cadastro"><i class="icon ion-checkmark-circled"></i>Atualizar</button>
 </form>

@@ -34,7 +34,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 24rem;
+    height: 18rem;
+    width: 100%;
 }
 .text-img {
     display: flex;

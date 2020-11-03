@@ -5328,9 +5328,9 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
+  color: #ffffff;
+  background: #0abb87;
+  border: 1px solid #0abb87;
 }
 
 .alert-success hr {
@@ -5836,7 +5836,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
-  color: #000;
+  color: rgb(255, 255, 255);
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
 }

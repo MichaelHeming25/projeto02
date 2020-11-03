@@ -93,27 +93,25 @@ class eventosController extends Controller
 
         $dia = $data[2];
 
-        $mes = $mesgeral;
-
         $db = New eventos();
 
-        $teste = $request->file('img');
+        $img_file = $request->file('img');
 
-        if( isset($teste)){
+        if(isset($img_file)){
 
-            $name_file = $teste->getClientOriginalName();
+            $name_file = $img_file->getClientOriginalName();
 
-            $ext = pathinfo($name_file, PATHINFO_EXTENSION);
+            $ext_file = pathinfo($name_file, PATHINFO_EXTENSION);
 
-            $item = base64_encode(file_get_contents($request->file('img')));
+            $img_convert = base64_encode(file_get_contents($request->file('img')));
 
-            $db->ext = $ext;
+            $db->ext = $ext_file;
             $db->name_img = $name_file;
-            $db->imagem_evento = $item;
+            $db->imagem_evento = $img_convert;
         };
         
         $db->dia = $dia;
-        $db->mes = strtoupper($mes);
+        $db->mes = strtoupper($mesgeral);
         $db->data = $request->input('data');
         $db->evento = $request->input('evento');
         $db->save();
@@ -150,6 +148,27 @@ class eventosController extends Controller
     public function editarSalvar(Request $request, $id)
     {
         $db = eventos::find($id);
+
+        $img_file = $request->file('img');
+
+        if(isset($img_file)){
+
+            $name_file = $img_file->getClientOriginalName();
+
+            $ext_file = pathinfo($name_file, PATHINFO_EXTENSION);
+
+            $img_convert = base64_encode(file_get_contents($request->file('img')));
+
+            $db['imagem_evento'] = $img_convert;
+        };
+
+        if(isset($name_file)){
+            $db['name_img'] = $name_file;
+        }
+
+        if(isset($ext_file)){
+            $db['ext'] = $ext_file;
+        }
         
         $mesdata = $request['data'];
 
@@ -196,47 +215,45 @@ class eventosController extends Controller
 
         $dia = $data[2];
 
-        $mes = substr("$mesgeral", 0, 3);
-
         $dados = $request->all();
 
         $evento = $dados['evento'];
         $data = $dados['data'];
         
         $db['dia'] = $dia;
-        $db['mes'] = strtoupper($mes);
+        $db['mes'] = strtoupper($mesgeral);
         $db['evento'] = $evento;
         $db['data'] = $data;
         
         $db->save();
 
-        return redirect()->route('tip.agenda')->with('mensagem', 'O evento foi atualizado com sucesso!');
+        return redirect()->route('admin.eventos')->with('mensagem', 'O evento foi atualizado com sucesso!');
     }
 
     public function confirm(Request $request, $id)
     {
 
-        $db = user::find($id);
-        return view('TIP.agenda.confirmDelete', [
+        $db = eventos::find($id);
+        return view('admin.eventos.confirmDelete', [
             'id' => $id,
         ]);
     }
 
-    public function removerAgenda(request $request)
+    public function removerEvento(request $request)
     {
         
-        $user = user::all();
+        // $user = user::all();
 
-        foreach ($user as $users) {
-            if(Auth::user()->pdeletar_agenda == 0){
-                return redirect()->route('tip.erro')->with('invalido', 'Você não tem permissão para remover esse evento!');
-            }else{
+        // foreach ($user as $users) {
+        //     if(Auth::user()->pdeletar_agenda == 0){
+        //         return redirect()->route('admin.erro')->with('invalido', 'Você não tem permissão para remover esse evento!');
+        //     }else{
                 $user = eventos::find($request->id);
                 $user->delete();
 
-                return redirect()->route('tip.erroRemover')->with('invalido', 'O evento foi deletado com sucesso!');
-            }
-        }
+                return redirect()->route('admin.eventos')->with('invalido', 'O evento foi deletado com sucesso!');
+        //     }
+        // }
  
     }
     

@@ -16,18 +16,18 @@
 	</div>
 	
 	<div class="form-group">
-		<label for="avatar" style="margin:0;padding-left: 0.3rem;">Imagem do evento:</label><br>
+		<label for="img" style="margin:0;padding-left: 0.3rem;">Imagem do evento:</label><br>
 		<span class="avatar-obs">Obs: Tamanho recomendado: largura: 64px, Altura: 64px.</span>
 
 		<div class="input-group">
 			<div class="custom-file"> 
-				<input type="file" accept="image/*" name="avatar" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" onchange="preview()">
+				<input type="file" accept="image/*" name="img" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" onchange="preview()">
 				<label class="custom-file-label preview" for="inputGroupFile04" value="{{$imagem_evento}}">{{$name_img}}</label>
 			</div>
 		</div>
 	</div>
 	
-	<img src="data:image/{{$ext}};base64,{{$imagem_evento}}" name="avatar" style="margin: 0.5rem 0 1rem 0;width:50%;height:50%;"><br>
+	<img src="data:image/{{$ext}};base64,{{$imagem_evento}}" name="img" style="margin: 0.5rem 0 1rem 0;width:50%;height:50%;"><br>
 
 	<button type="submit" class="btn btn-cadastro"><i class="icon ion-checkmark-circled"></i>Atualizar</button>
 </form>
@@ -39,6 +39,9 @@
 				required: true
 			},
 			evento: {
+				required: true
+			},
+			img: {
 				required: true
 			},
 		}

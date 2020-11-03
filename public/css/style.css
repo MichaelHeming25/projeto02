@@ -315,7 +315,7 @@ nav {
 /* GRID-EVENTO */
 .grid-evento {
     background: white;
-    width: 28rem;
+    width: 22rem;
     margin: 0.5rem;
     transition: 0.2s linear;
 }
@@ -326,12 +326,13 @@ nav {
 .gride {
     display: flex;
     flex-direction: column;
-    margin: 0 1rem;
+    margin: 7rem 1rem 2rem 1rem;
 }
 .gride-conteudo {
     flex-wrap: wrap;
     align-items: center;
     display: flex;
+    justify-content: space-between;
 }
 /* FOOTER */
 footer {
