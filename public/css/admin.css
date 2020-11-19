@@ -1,19 +1,21 @@
-body{
+body {
     margin: 0;
     padding: 0;
     background: #eeeeee;
 }
 /* MODAL */
-.modal-cadastrar, .modal-remover, .modal-confirm {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1050;
-  display: none;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  outline: 0; 
+.modal-cadastrar,
+.modal-remover,
+.modal-confirm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
 }
 
 .modal-body-cadastrar {
@@ -25,23 +27,23 @@ body{
 .modal-body-remover {
     padding: 0.5rem;
 }
-.fa-exclamation{
-  padding: 2rem 2.5rem;
-  font-size: 2rem;
-  color: #9e0e0e;
-  margin: 1rem 0 2rem;
-  border: 1px solid #9e0e0e;
-  border-radius: 100%;
+.fa-exclamation {
+    padding: 2rem 2.5rem;
+    font-size: 2rem;
+    color: #9e0e0e;
+    margin: 1rem 0 2rem;
+    border: 1px solid #9e0e0e;
+    border-radius: 100%;
 }
-.btn-cadastro{
+.btn-cadastro {
     color: #fff;
     background-color: #1d557d;
     border-color: #164668;
 }
 .btn-cadastro:hover {
-  color: #fff;
-  background-color: #15476b;
-  border-color: #0f3753;
+    color: #fff;
+    background-color: #15476b;
+    border-color: #0f3753;
 }
 /* MENU DE NAVEGAÇÃO */
 .modal-header-confirm {
@@ -61,7 +63,7 @@ body{
     border-top-left-radius: 0.3rem;
     border-top-right-radius: 0.3rem;
 }
-.alert{
+.alert {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -76,7 +78,7 @@ body{
 .dropdown-toggle::after {
     display: none;
 }
-.navbar{
+.navbar {
     background: white;
     position: relative;
     display: -ms-flexbox;
@@ -89,10 +91,14 @@ body{
     height: 4rem;
     box-shadow: 1px 1px 15px #d2d2d2;
     border-bottom: 1px solid #d2d2d2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
-.btn-navbar{
+.btn-navbar {
     background: none;
-    width: 60px;
+    width: 55px;
     border: none;
     cursor: pointer;
     position: relative;
@@ -100,26 +106,26 @@ body{
     z-index: 999;
     transition: 0.3s linear;
 }
-.btn-navbar:focus{
+.btn-navbar:focus {
     outline: 0;
 }
-.btn-navbar span{
+.btn-navbar span {
     display: block;
     height: 3px;
     background-color: #1d557d;
     margin: 8px 0;
     position: relative;
     transition: 0.3s linear;
-    font-family: 'montserrat';
+    font-family: "montserrat";
 }
-.navbar-left{
+.navbar-left {
     position: fixed;
     height: 100vh;
     width: 100%;
     background-color: #fff;
     top: 0;
-    left: -100%;
-    max-width: 200px;
+    left: 0;
+    max-width: 4rem;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -129,108 +135,92 @@ body{
     z-index: 998;
     box-shadow: 1px 10px 15px #d2d2d2;
 }
-.navbar-left span{
-    width: 100%;
-    padding: 0 0.5rem;
-    height: 2.5rem;
+.navbar-left span {
+    padding-left: 0.5rem;
     display: flex;
     align-items: center;
-    /* color: #0f4e7e; */
     transition: 0.3s linear;
 }
 
-.navbar-left.active{
+.navbar-left.active {
     transition: 0.2s linear;
     overflow-y: hidden;
     left: 0;
 }
-.navbar-left span a{
+.navbar-left span a {
     text-decoration: none;
     color: #0f4e7e;
     width: 100%;
     display: flex;
     align-items: center;
 }
-.conteudo-left{
-    margin-left: 13.5rem!important;
+.conteudo-left {
+    margin-left: 6rem !important;
     transition: 0.2s linear;
 }
 
 .sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  overflow-x: hidden;
-  padding: 1rem;
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+    padding: 1rem;
 }
-.btn-navbar.active span:nth-child(1){
+.btn-navbar.active span:nth-child(1) {
     transform: rotate(-45deg);
     top: 11px;
 }
-.btn-navbar.active span:nth-child(2){
+.btn-navbar.active span:nth-child(2) {
     opacity: 0;
 }
-.btn-navbar.active span:nth-child(3){
+.btn-navbar.active span:nth-child(3) {
     transform: rotate(45deg);
     bottom: 11px;
 }
-.invert{
+.invert {
     transform: scaleY(-1);
     transition: 0.1s linear;
 }
-.arrow-down{
-    margin-left: -1rem;
-    padding: 0;
-    width: 12.5rem;
-    position: absolute;
-    padding-right: 1.5rem;
-    align-items: center;
-    justify-content: flex-end;
-    display: flex!important;
-    transition: 0.2s linear;
-}
-
 /* CONTEUDO DAS PÁGINAS */
-header{
+header {
     padding: 0.5rem 1rem;
     width: 100%;
     border-bottom: 1px solid #d2d2d2;
-    font-family: 'montserrat';
+    font-family: "montserrat";
     justify-content: space-between;
     display: flex;
     align-items: center;
     color: #1d557d;
 }
-.conteudo{
-    margin-top: 1rem;
+.conteudo {
+    margin: 5rem;
     transition: 0.2s linear;
     padding: 0;
     background: white;
-    margin-left: 1rem;
-    min-height: 750px;
+    height: 100vh;
 }
-header span i{
+header span i {
     padding-right: 0.5rem;
 }
-.cadastrar button{
+.cadastrar button {
     background: #1d557d;
     border-radius: 0.3rem;
     color: white;
     border: none;
     padding: 0.5rem;
 }
-.cadastrar button i{
+.cadastrar button i {
     padding-right: 0.5rem;
 }
-.form-interno{
+.form-interno {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.group{
+.group {
     padding: 0.5rem 0;
     display: flex;
     width: 100%;
@@ -238,66 +228,66 @@ header span i{
     align-items: flex-start;
     justify-content: center;
 }
-.btn-cadastrar{
+.btn-cadastrar {
     justify-content: center;
     align-items: center;
     display: flex;
     width: 100%;
     padding: 1rem 0;
 }
-.btn-cadastrar button{
+.btn-cadastrar button {
     background: #1d557d;
     border: none;
     padding: 0.5rem;
     color: white;
     border-radius: 0.3rem;
 }
-.group input{
+.group input {
     width: 98%;
     border: 1px solid #949494;
     padding: 0.3rem;
     border-radius: 0.2rem;
 }
-.group label{
+.group label {
     padding-left: 0.3rem;
     font-family: Arial, Helvetica, sans-serif;
     color: #256694;
     margin: 0;
     font-weight: 600;
 }
-.fa-user-plus{
+.fa-user-plus {
     padding-right: 0.5rem;
 }
-.botoes{
+.botoes {
     padding-left: 2rem;
 }
-.botoes .botao-editar{
+.botoes .botao-editar {
     background: transparent;
     color: #93a2dd;
     border: none;
 }
-.botoes .botao-editar:focus{
+.botoes .botao-editar:focus {
     outline: 0;
 }
-.botoes .botao-editar:hover{
+.botoes .botao-editar:hover {
     color: #7c8ac4;
     border-radius: 100%;
     background: #bcc5eb4a;
 }
-.botoes .botao-remover{
+.botoes .botao-remover {
     background: transparent;
     color: rgb(184, 91, 91);
     border: none;
 }
-.botoes .botao-remover:focus{
+.botoes .botao-remover:focus {
     outline: 0;
 }
-.botoes .botao-remover:hover{
+.botoes .botao-remover:hover {
     color: rgb(156, 64, 64);
     border-radius: 100%;
-    background:  #ebbcbc4a;
+    background: #ebbcbc4a;
 }
-.btn-cadastrar{
+.btn-cadastrar {
     background: #1d557d;
     border-radius: 0.3rem;
     color: white;
@@ -323,14 +313,14 @@ header span i{
     display: flex;
     align-items: center;
 }
-.profile{
+.profile {
     height: 100%;
     display: flex;
     align-items: center;
     margin-right: 1rem;
     justify-content: space-between;
 }
-.profile img{
+.profile img {
     height: 2.5rem;
     margin-right: 1rem;
     /* background: #00ffea1c; */
@@ -338,36 +328,42 @@ header span i{
     border: 1px solid #bfbfbf;
     border-radius: 100%;
 }
-.arrow-profile{
+.arrow-profile {
     padding-left: 1rem;
 }
 .top-bar .logged-user {
     position: relative;
     top: 0px;
 }
-.logged-user .btn-group .btn{
+.logged-user .btn-group .btn {
     padding: 0;
     height: 100%;
     text-decoration: none;
 }
-.btn-group a{
+.btn-group a {
     text-decoration: none;
     color: black;
     width: 100%;
     text-align: center;
 }
-.btn-group a:hover{
+.btn-group a:hover {
     text-decoration: none;
     color: black;
 }
-.logged-user .btn-group .btn:focus{
+.logged-user .btn-group .btn:focus {
     outline: 0;
     box-shadow: none;
 }
-.preview{
+.preview {
     margin: 0.5rem 0 0 0;
 }
-.avatar-obs{
+.avatar-obs {
     font-size: 0.8rem;
     padding-left: 0.3rem;
+}
+.icon-li {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-size: 1.5rem;
 }

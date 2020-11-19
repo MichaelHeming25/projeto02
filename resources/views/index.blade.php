@@ -91,10 +91,10 @@
                                 <span>Seja Bem-vindo, {{ Auth::user()->name }}!</span>
                             </div>
                         @else
-                            <div class="register-mobile">
+                            {{-- <div class="register-mobile">
                                 <a href="{{ route('register') }}"><span>Sign Up</span></a>
                                 <a href="{{ route('login') }}"><span>Log In</span></a>
-                            </div>
+                            </div> --}}
                         @endif
 
                         <div class="mobile-drop">

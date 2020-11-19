@@ -47,59 +47,65 @@
 
     <div class="navbar-left">
         <div class="accordion-menu">
+
             <ul class="menu">
                 <li class="li">
-                    <a href="{{ route('admin.usuarios') }}">
-                        <i class="fas fa-user"></i>
-                        <span>USUÁRIOS</span>
-                    </a>
+                    <button type="button" style="background:transparent;border:none;width:100%;padding:0;" data-trigger="hover" data-content="USÁRIOS" class="btn2">
+                        <a href="{{ route('admin.usuarios') }}">
+                            <div class="icon-li">
+                                <i class="fas fa-user"></i>
+                                {{-- <span>USUÁRIOS</span> --}}
+                            </div>
+                        </a>
+                    </button>
                 </li>
                 <li class="li">
-                    <a href="{{ route('admin.eventos') }}">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>EVENTOS</span>
-                    </a>
+                    <button type="button" style="background:transparent;border:none;width:100%;padding:0;" data-trigger="hover" data-content="EVENTOS" >
+                        <a href="{{ route('admin.eventos') }}">
+                            <div class="icon-li">
+                                <i class="far fa-calendar-alt"></i>
+                                {{-- <span>EVENTOS</span> --}}
+                            </div>
+                        </a>
+                    </button>
                 </li>
+
                 <li>
-                    <a href="#">
-                        <i class="fas fa-user"></i>
-                            <span>USUÁRIOS</span>
-                        <i class="fas fa-angle-down arrow-down"></i>
-                    </a>
+                    <button type="button" style="background:transparent;border:none;width:100%;padding:0;" data-trigger="hover" data-content="USÁRIOS">
+                        <a href="#" >
+                            <div class="icon-li">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <i class="fas fa-angle-down arrow-down"></i>
+                        </a>
+                    </button>
                     <ul>
-                        <li class="li2"><a href="#"><i class="far fa-copy"></i>Sub-Element</a></li>
-                        <li class="li2"><a href="#"><i class="far fa-copy"></i>Sub-Element</a></li>
-                        <li class="li2"><a href="#"><i class="far fa-copy"></i>Sub-Element</a></li>
-                        <li class="li2"><a href="#"><i class="far fa-copy"></i>Sub-Element</a></li>
+                        <li class="li2">
+                            <a href="#">
+                                <button type="button"  data-trigger="hover" data-content="EDITAR">
+                                    <i class="far fa-edit"></i>
+                                </button>  
+                            </a>
+                        </li>
+                        <li class="li2">
+                            <a href="#">
+                                <button type="button"  data-trigger="hover" data-content="REMOVER">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>  
+                            </a>
+                        </li>
                     </ul>
+                    
                 </li>
+
             </ul>
         </div>
     </div>
 </nav>
 <script src="{{ asset('js/jquery.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script>
-
-    $('.li').mouseenter(function(){
-        $(this).css('background', '#3376a7')
-        $(this).css('background', '0.1s linear')
-        $(this).children('.li a').css('color', 'white')
-    });
-    $('.li').mouseleave(function(){
-        $(this).css('background','#fff')
-        $(this).css('background','0.1s linear')
-        $(this).children('.li a').css('color', '#3376a7')
-    });
-
-    $('.li2').mouseenter(function(){
-        $(this).css('background', '#eaf5fd')
-        $(this).css('background', '0.1s linear')
-        $(this).children('.li2 a').css('color', '#424242')
-    });
-    $('.li2').mouseleave(function(){
-        $(this).css('background','#fff')
-        $(this).css('background','0.1s linear')
-        $(this).children('.li2 a').css('color', '#424242')
-    });
-
+    $(function () {
+        $('[data-trigger="hover"]').popover()
+    })
 </script>

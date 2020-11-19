@@ -17,7 +17,8 @@ class eventosController extends Controller
 
     public function index()
     {
-        
+        $paginaLink = basename($_SERVER['SCRIPT_NAME']);
+        dd($paginaLink);
         // $user = user::all();
 
         // foreach ($user as $users) {

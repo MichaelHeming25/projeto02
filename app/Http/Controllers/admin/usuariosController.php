@@ -17,6 +17,9 @@ class usuariosController extends Controller
 
     public function index()
     {
+        // $paginaLink = basename($_SERVER['SCRIPT_NAME']);
+        // dd($paginaLink);
+        
         $users = user::all();
 
         return view('admin.usuarios.usuarios', [
@@ -53,15 +56,15 @@ class usuariosController extends Controller
 
         if($verific_email == "true") {
             return redirect()->route('admin.usuarios')->with('invalido', 'E-Mail já existente!');
+        } else{
+            $db->name = $request->input('name');
+            $db->email = $request->input('email');
+            $db->telefone = $request->input('telefone');
+            $db->password = bcrypt($request->input('password'));
+            $db->save();
+
+            return redirect()->route('admin.usuarios')->with('mensagem', 'O usuário foi cadastrado com sucesso!');
         }
-
-        $db->name = $request->input('name');
-        $db->email = $request->input('email');
-        $db->telefone = $request->input('telefone');
-        $db->password = bcrypt($request->input('password'));
-        $db->save();
-
-        return redirect()->route('admin.usuarios')->with('mensagem', 'O usuário foi cadastrado com sucesso!');
 
     }
 
@@ -99,7 +102,7 @@ class usuariosController extends Controller
 
         $teste2 = $request->file('avatar');
 
-        if( isset($teste2)){
+        if(isset($teste2)){
 
             $name_file = $teste2->getClientOriginalName();
 
@@ -124,23 +127,7 @@ class usuariosController extends Controller
 
         $verific_email = DB::table('users')->where('email', $dados['email'])->count() == 1;
 
-        if($verific_email == "true") {
-
-            $name = $dados['name'];
-            $email = $db['email'];
-            $telefone = $dados['telefone'];
-            $password = bcrypt($dados['password']);
-            
-            $db['name'] = $name;
-            $db['telefone'] = $telefone;
-            $db['email'] = $email;
-            $db['password'] = $password;
-
-            $db->save();
-
-            return redirect()->route('admin.usuarios')->with('invalido', 'E-Mail já existente!');
-        } else{
-
+        if ($db['email'] == $dados['email']) {
             $name = $dados['name'];
             $email = $dados['email'];
             $telefone = $dados['telefone'];
@@ -154,6 +141,39 @@ class usuariosController extends Controller
             $db->save();
 
             return redirect()->route('admin.usuarios')->with('mensagem', 'O usuário foi atualizado com sucesso!');
+        } else{
+
+            if($verific_email == "true") {
+
+                $name = $dados['name'];
+                $email = $db['email'];
+                $telefone = $dados['telefone'];
+                $password = bcrypt($dados['password']);
+                
+                $db['name'] = $name;
+                $db['telefone'] = $telefone;
+                $db['email'] = $email;
+                $db['password'] = $password;
+
+                $db->save();
+
+                return redirect()->route('admin.usuarios')->with('invalido', 'E-Mail já existente!');
+            } else{
+
+                $name = $dados['name'];
+                $email = $dados['email'];
+                $telefone = $dados['telefone'];
+                $password = bcrypt($dados['password']);
+                
+                $db['name'] = $name;
+                $db['telefone'] = $telefone;
+                $db['email'] = $email;
+                $db['password'] = $password;
+
+                $db->save();
+
+                return redirect()->route('admin.usuarios')->with('mensagem', 'O usuário foi atualizado com sucesso!');
+            }
 
         }
 
